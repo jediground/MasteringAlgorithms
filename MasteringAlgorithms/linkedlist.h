@@ -10,6 +10,7 @@
 #define linkedlist_h
 
 #include <stdio.h>
+#include <stdlib.h>
 
 /// Define a struct for linked list elements
 typedef struct _linkedlist_node {
@@ -22,8 +23,8 @@ typedef struct _linkedlist {
     int size;
     int (*match)(const void *key1, const void *key2);
     void (*destroy)(void *data);
-    struct _linkedlist *head;
-    struct _linkedlist *tail;
+    struct _linkedlist_node *head;
+    struct _linkedlist_node *tail;
 } linkedlist;
 
 // Public interface
