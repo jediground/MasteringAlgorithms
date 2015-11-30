@@ -1,12 +1,12 @@
 //
-//  Prepare.cpp
-//  CrackingTheCodingInterview
+//  prepare.c
+//  MasteringAlgorithms
 //
-//  Created by Moch Xiao on 11/29/15.
-//  Copyright © 2015 Moch Xiao. All rights reserved.
+//  Created by Moch Xiao on 11/30/15.
+//  Copyright © 2015 Moch. All rights reserved.
 //
 
-#include "Prepare.hpp"
+#include "prepare.h"
 
 int fact(int n) {
     if (0 > n) {
@@ -32,11 +32,11 @@ int facttail(int n, int a) {
     }
 }
 
-int issort(void *data, int size, int esize, int (*compare)(const void *key1, const void *key2)) {
+int issort(void *data, int size, size_t esize, int (*compare)(const void *key1, const void *key2)) {
     char *a = (char*)data;
     void *key;
     int i, j;
-
+    
     // Allocate storage for the key element
     if (NULL == (key = (char *)malloc(esize))) {
         return -1;
@@ -60,48 +60,3 @@ int issort(void *data, int size, int esize, int (*compare)(const void *key1, con
     
     return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

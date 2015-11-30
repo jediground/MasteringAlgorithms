@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "46B82F751C0BE0A8004B87DC"
+               BlueprintIdentifier = "46B82F941C0BF6D3004B87DC"
                BuildableName = "MasteringAlgorithms"
                BlueprintName = "MasteringAlgorithms"
                ReferencedContainer = "container:MasteringAlgorithms.xcodeproj">
@@ -32,7 +32,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "46B82F751C0BE0A8004B87DC"
+            BlueprintIdentifier = "46B82F941C0BF6D3004B87DC"
             BuildableName = "MasteringAlgorithms"
             BlueprintName = "MasteringAlgorithms"
             ReferencedContainer = "container:MasteringAlgorithms.xcodeproj">
@@ -55,7 +55,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "46B82F751C0BE0A8004B87DC"
+            BlueprintIdentifier = "46B82F941C0BF6D3004B87DC"
             BuildableName = "MasteringAlgorithms"
             BlueprintName = "MasteringAlgorithms"
             ReferencedContainer = "container:MasteringAlgorithms.xcodeproj">
@@ -74,7 +74,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "46B82F751C0BE0A8004B87DC"
+            BlueprintIdentifier = "46B82F941C0BF6D3004B87DC"
             BuildableName = "MasteringAlgorithms"
             BlueprintName = "MasteringAlgorithms"
             ReferencedContainer = "container:MasteringAlgorithms.xcodeproj">
