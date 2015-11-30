@@ -10,7 +10,6 @@
 #define linkedlist_h
 
 #include <stdio.h>
-#include <stdlib.h>
 
 /// Define a struct for linked list elements
 typedef struct _linkedlist_node {
@@ -40,6 +39,5 @@ int linkedlist_remove_next(linkedlist *list, linkedlist_node *node, void **data)
 #define linkedlist_is_tail(list, node) ((node)->next == NULL ? 1 : 0)
 #define linkedlist_data(node) ((node)->data)
 #define linkedlist_next(node) ((node)->next)
-
 
 #endif /* linkedlist_h */

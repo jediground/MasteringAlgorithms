@@ -7,9 +7,19 @@
 //
 
 #include <stdio.h>
+#include "linkedlist.h"
+
+int linkedlist_test();
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    printf("Hello, World!\n");
+
+    linkedlist_test();
+    
+    return 0;
+}
+
+
+int linkedlist_test() {
+
     return 0;
 }

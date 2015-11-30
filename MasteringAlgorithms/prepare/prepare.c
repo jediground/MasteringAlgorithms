@@ -7,6 +7,7 @@
 //
 
 #include "prepare.h"
+#include <string.h>
 
 int fact(int n) {
     if (0 > n) {
