@@ -1,9 +1,5 @@
 //
-//  doublylinkedlist.c
-//  MasteringAlgorithms
-//
-//  Created by Moch Xiao on 11/30/15.
-//  Copyright © 2015 Moch. All rights reserved.
+// Created by Moch Xiao on 12/2/15.
 //
 
 #include "doublylinkedlist.h"
@@ -21,33 +17,33 @@ void doublylinkedlist_init(doublylinkedlist *list, void(destroy)(void *data)) {
 
 void doublylinkedlist_destroy(doublylinkedlist *list) {
     void *data;
-    
+
     // Remove each element
     for (; 0 == doublylinkedlist_remove(list, doublylinkedlist_tail(list), (void **)&data) &&
-         NULL != list->destroy; ) {
+           NULL != list->destroy; ) {
         // Call a user-defined function to free dynamically allocated data
         list->destroy(data);
     }
-    
+
     // No operations are allowed now, but clear the structure as a precaution
     memset(list, 0, sizeof(doublylinkedlist));
-    
+
     return;
 }
 
 int doublylinkedlist_insert_next(doublylinkedlist *list, doublylinkedlist_node *node, const void *data) {
     doublylinkedlist_node *new_node;
-    
+
     // Do not allow a NULL element unless th list is empty
     if (NULL == node && 0 != doublylinkedlist_size(list)) {
         return -1;
     }
-    
+
     // Allocated storage for the element
     if (NULL == (new_node = (doublylinkedlist_node *)malloc(sizeof(doublylinkedlist_node)))) {
         return -1;
     }
-    
+
     // Insert tht new element into the list
     new_node->data = (void *)data;
     if (0 == doublylinkedlist_size(list)) {
@@ -60,30 +56,30 @@ int doublylinkedlist_insert_next(doublylinkedlist *list, doublylinkedlist_node *
         // Handle insertion when the list is empty
         new_node->next = node->next;
         new_node->previous = node;
-        
+
         if (NULL == node->next) {
             list->tail = new_node;
         } else {
             node->next = new_node;
         }
-        
+
         node->next = new_node;
     }
-    
+
     // Adjust the size of the list to account for the inserted element
     list->size++;
-    
+
     return 0;
 }
 
 int doublylinkedlist_insert_previous(doublylinkedlist *list, doublylinkedlist_node *node, const void *data) {
     doublylinkedlist_node *new_node;
-    
+
     // Do not allow a NULL element unless th list is empty
     if (NULL == node && 0 != doublylinkedlist_size(list)) {
         return -1;
     }
-    
+
     // Allocated storage for the element
     if (NULL == (new_node = (doublylinkedlist_node *)malloc(sizeof(doublylinkedlist_node)))) {
         return -1;
@@ -107,13 +103,13 @@ int doublylinkedlist_insert_previous(doublylinkedlist *list, doublylinkedlist_no
         } else {
             node->previous->next = new_node;
         }
-        
+
         node->previous = new_node;
     }
-    
+
     // Adjust the size of the list to account for the inserted element
     list->size++;
-    
+
     return 0;
 }
 
@@ -122,7 +118,7 @@ int doublylinkedlist_remove(doublylinkedlist *list, doublylinkedlist_node *node,
     if (NULL == node || 0 == doublylinkedlist_size(list)) {
         return -1;
     }
-    
+
     // Remove the element from the list
     *data = node->data;
     if (node == list->head) {
@@ -141,12 +137,12 @@ int doublylinkedlist_remove(doublylinkedlist *list, doublylinkedlist_node *node,
             node->next->previous = node->previous;
         }
     }
-    
+
     // Free the storage allocated by the abstract datatype
     free(node);
-    
+
     // Adjust the size of the list to account for the remoed element
     list->size--;
-    
+
     return 0;
 }

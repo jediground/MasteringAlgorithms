@@ -1,15 +1,9 @@
 //
-//  linkedlist.h
-//  MasteringAlgorithms
-//
-//  Created by Moch Xiao on 11/30/15.
-//  Copyright © 2015 Moch. All rights reserved.
+// Created by Moch Xiao on 12/2/15.
 //
 
-#ifndef linkedlist_h
-#define linkedlist_h
-
-#include <stdio.h>
+#ifndef MASTERINGALGORITHMS_LINKEDLIST_H
+#define MASTERINGALGORITHMS_LINKEDLIST_H
 
 /// Define a struct for linked list elements
 typedef struct _linkedlist_node {
@@ -40,4 +34,4 @@ int linkedlist_remove_next(linkedlist *list, linkedlist_node *node, void **data)
 #define linkedlist_data(node) ((node)->data)
 #define linkedlist_next(node) ((node)->next)
 
-#endif /* linkedlist_h */
+#endif //MASTERINGALGORITHMS_LINKEDLIST_H

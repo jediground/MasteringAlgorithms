@@ -1,15 +1,9 @@
 //
-//  doublylinkedlist.h
-//  MasteringAlgorithms
-//
-//  Created by Moch Xiao on 11/30/15.
-//  Copyright © 2015 Moch. All rights reserved.
+// Created by Moch Xiao on 12/2/15.
 //
 
-#ifndef doublylinkedlist_h
-#define doublylinkedlist_h
-
-#include <stdio.h>
+#ifndef MASTERINGALGORITHMS_DOUBLYLINKEDLIST_H
+#define MASTERINGALGORITHMS_DOUBLYLINKEDLIST_H
 
 /// Define a structure for doubly-linked list elements
 typedef struct _doublylinkedlist_node {
@@ -43,4 +37,4 @@ int doublylinkedlist_remove(doublylinkedlist *list, doublylinkedlist_node *node,
 #define doublylinkedlist_next(node) ((ndoe)->next)
 #define doublylinkedlist_previous(node) ((node)->previous)
 
-#endif /* doublylinkedlist_h */
+#endif //MASTERINGALGORITHMS_DOUBLYLINKEDLIST_H

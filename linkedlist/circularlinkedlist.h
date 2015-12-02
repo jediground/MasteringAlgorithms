@@ -6,8 +6,8 @@
 //  Copyright © 2015 Moch. All rights reserved.
 //
 
-#ifndef circularlinkedlist_h
-#define circularlinkedlist_h
+#ifndef MASTERINGALGORITHMS_CIRCULARLINKEDLIST_H
+#define MASTERINGALGORITHMS_CIRCULARLINKEDLIST_H
 
 #include <stdio.h>
 
@@ -37,4 +37,4 @@ int circularlinkedlist_remove_next(circularlinkedlist *list, circularlinkedlist_
 #define circularlinkedlist_data(node) ((node)->data)
 #define circularlinkedlist_next(node) ((node)->next)
 
-#endif /* circularlinkedlist_h */
+#endif // MASTERINGALGORITHMS_CIRCULARLINKEDLIST_H
