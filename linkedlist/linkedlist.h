@@ -21,7 +21,7 @@ typedef struct _linkedlist_type {
 } linkedlist_type;
 
 // Public interface
-void linkedlist_init(linkedlist_type *list, void (*destory)(void *data));
+void linkedlist_init(linkedlist_type *list, void (*destroy)(void *data));
 void linkedlist_destroy(linkedlist_type *list);
 int linkedlist_insert_next(linkedlist_type *list, linkedlist_node_type *node, const void *data);
 int linkedlist_remove_next(linkedlist_type *list, linkedlist_node_type *node, void **data);

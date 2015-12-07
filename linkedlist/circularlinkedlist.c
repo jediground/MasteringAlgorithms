@@ -14,13 +14,13 @@ void circularlinkedlist_init(circularlinkedlist_type *list, void(*destroy)(void 
     list->size = 0;
     list->destroy = destroy;
     list->head = NULL;
-    
+
     return;
 }
 
 void circularlinkedlist_destroy(circularlinkedlist_type *list) {
     void *data;
-    
+
     // Remove each elements
     for (; 0 < circularlinkedlist_size(list); ) {
         if (0 == circularlinkedlist_remove_next(list, list->head, (void **)&data) &&
@@ -38,12 +38,12 @@ void circularlinkedlist_destroy(circularlinkedlist_type *list) {
 
 int circularlinkedlist_insert_next(circularlinkedlist_type *list, circularlinkedlist_node_type *node, const void *data) {
     circularlinkedlist_node_type *new_node;
-    
+
     // Allocate storage for the element
     if (NULL == (new_node = (circularlinkedlist_node_type *)malloc(sizeof(circularlinkedlist_node_type)))) {
         return -1;
     }
-    
+
     // Insert the element into the list
     new_node->data = (void *)data;
     if (0 == circularlinkedlist_size(list)) {
@@ -55,7 +55,7 @@ int circularlinkedlist_insert_next(circularlinkedlist_type *list, circularlinked
         new_node->next = node;
         node->next = new_node;
     }
-    
+
     // Adjust the size of the list to account for the inserted element
     list->size++;
 
@@ -64,12 +64,12 @@ int circularlinkedlist_insert_next(circularlinkedlist_type *list, circularlinked
 
 int circularlinkedlist_remove_next(circularlinkedlist_type *list, circularlinkedlist_node_type *node, void **data) {
     circularlinkedlist_node_type *old_node;
-    
+
     // Do not allow removal from an empty list
     if (0 == circularlinkedlist_size(list)) {
         return -1;
     }
-    
+
     // Remove the element from the list
     *data = node->next->data;
     if (node == node->next) {
@@ -84,12 +84,12 @@ int circularlinkedlist_remove_next(circularlinkedlist_type *list, circularlinked
             list->head = old_node->next;
         }
     }
-    
+
     // Free the storage allocated by the abstract datatype
     free(old_node);
-    
+
     // Adjust the size of the list to account for the remoed element
     list->size--;
-    
+
     return 0;
 }

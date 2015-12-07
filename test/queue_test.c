@@ -48,7 +48,7 @@ void test_queue() {
 
     printf("dequeue...\n");
     int *dequeue = (int *)malloc(sizeof(int));
-    if (0 == queue_dequeue(queue, &dequeue)) {
+    if (0 == queue_dequeue(queue, (void **)&dequeue)) {
         printf("dequeued value is: %i\n", *dequeue);
         queue_print(queue);
     }

@@ -58,7 +58,7 @@ void test_linkedlist() {
 
     printf("remove...\n");
     int *remove = (int *)malloc(sizeof(int));
-    linkedlist_remove_next(list, NULL, &remove);
+    linkedlist_remove_next(list, NULL, (void **)&remove);
     printf("removed item is: %i\n", *remove);
 
     print_linkedlist(list);

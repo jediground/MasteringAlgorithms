@@ -51,7 +51,7 @@ void test_stack() {
 
     printf("pop...\n");
     int *pop = (int *)malloc(sizeof(int));
-    if (0 == stack_pop(stack, &pop)) {
+    if (0 == stack_pop(stack, (void **)&pop)) {
         printf("poped value is: %i\n", *pop);
         print_stack(stack);
     }

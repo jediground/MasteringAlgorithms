@@ -15,5 +15,5 @@ set(SOURCE_FILES main.c
         queue/queue.c queue/queue.h
         test/stack_test.c test/stack_test.h
         test/queue_test.c test/queue_test.h
-)
+        set/set.c set/set.h)
 add_executable(MasteringAlgorithms ${SOURCE_FILES})

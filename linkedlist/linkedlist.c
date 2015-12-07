@@ -6,9 +6,9 @@
 #include <string.h>
 #include <stdlib.h>
 
-void linkedlist_init(linkedlist_type *list, void (*destory)(void *data)) {
+void linkedlist_init(linkedlist_type *list, void (*destroy)(void *data)) {
     list->size = 0;
-    list->destroy = destory;
+    list->destroy = destroy;
     list->head = NULL;
     list->tail = NULL;
 
