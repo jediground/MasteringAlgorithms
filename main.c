@@ -1,11 +1,16 @@
 #include <stdio.h>
-#include "linkedlist/linkedlist.h"
-#include "linkedlist/doublylinkedlist.h"
-#include "linkedlist/circularlinkedlist.h"
-
+#include <stdlib.h>
+#include "test/linkedlist_test.h"
+#include "test/stack_test.h"
+#include "test/queue_test.h"
 
 int main() {
-    printf("Hello, CLion!");
+
+//    test_linkedlist();
+//    test_stack();
+//    test_queue();
 
     return 0;
 }
+
+

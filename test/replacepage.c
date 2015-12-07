@@ -3,8 +3,9 @@
 //
 
 #include "replacepage.h"
+#include "../linkedlist/circularlinkedlist.h"
 
-int replace_page(circularlinkedlist_node **current) {
+int replace_page(circularlinkedlist_node_type **current) {
     // Circle through the list of pages untill one is found to replace
     for (; 0 != ((page *)(*current)->data)->reference; ) {
         ((page *)(*current)->data)->reference = 0;

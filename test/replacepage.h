@@ -5,7 +5,7 @@
 #ifndef MASTERINGALGORITHMS_REPLACEPAGE_H
 #define MASTERINGALGORITHMS_REPLACEPAGE_H
 
-#include "circularlinkedlist.h"
+#include "../linkedlist/circularlinkedlist.h"
 
 // Define a structure for information about pages
 typedef struct _page {
@@ -14,6 +14,6 @@ typedef struct _page {
 } page;
 
 // Public interface
-int replace_page(circularlinkedlist_node **current);
+int replace_page(circularlinkedlist_node_type **current);
 
 #endif //MASTERINGALGORITHMS_REPLACEPAGE_H

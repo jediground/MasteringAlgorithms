@@ -1,5 +1,5 @@
 //
-//  circularlinkedlist.c
+//  circularlinkedlist_type.c
 //  MasteringAlgorithms
 //
 //  Created by Moch Xiao on 11/30/15.
@@ -10,7 +10,7 @@
 #include <string.h>
 #include <stdlib.h>
 
-void circularlinkedlist_init(circularlinkedlist *list, void(*destroy)(void *data)) {
+void circularlinkedlist_init(circularlinkedlist_type *list, void(*destroy)(void *data)) {
     list->size = 0;
     list->destroy = destroy;
     list->head = NULL;
@@ -18,7 +18,7 @@ void circularlinkedlist_init(circularlinkedlist *list, void(*destroy)(void *data
     return;
 }
 
-void circularlinkedlist_destroy(circularlinkedlist *list) {
+void circularlinkedlist_destroy(circularlinkedlist_type *list) {
     void *data;
     
     // Remove each elements
@@ -31,16 +31,16 @@ void circularlinkedlist_destroy(circularlinkedlist *list) {
     }
 
     // No operations are allowed now, but clear the structure as a precaution
-    memset(list, 0, sizeof(circularlinkedlist));
+    memset(list, 0, sizeof(circularlinkedlist_type));
 
     return;
 }
 
-int circularlinkedlist_insert_next(circularlinkedlist *list, circularlinkedlist_node *node, const void *data) {
-    circularlinkedlist_node *new_node;
+int circularlinkedlist_insert_next(circularlinkedlist_type *list, circularlinkedlist_node_type *node, const void *data) {
+    circularlinkedlist_node_type *new_node;
     
     // Allocate storage for the element
-    if (NULL == (new_node = (circularlinkedlist_node *)malloc(sizeof(circularlinkedlist_node)))) {
+    if (NULL == (new_node = (circularlinkedlist_node_type *)malloc(sizeof(circularlinkedlist_node_type)))) {
         return -1;
     }
     
@@ -62,8 +62,8 @@ int circularlinkedlist_insert_next(circularlinkedlist *list, circularlinkedlist_
     return 0;
 }
 
-int circularlinkedlist_remove_next(circularlinkedlist *list, circularlinkedlist_node *node, void **data) {
-    circularlinkedlist_node *old_node;
+int circularlinkedlist_remove_next(circularlinkedlist_type *list, circularlinkedlist_node_type *node, void **data) {
+    circularlinkedlist_node_type *old_node;
     
     // Do not allow removal from an empty list
     if (0 == circularlinkedlist_size(list)) {

@@ -8,6 +8,12 @@ set(SOURCE_FILES main.c
         linkedlist/linkedlist.c linkedlist/linkedlist.h
         linkedlist/doublylinkedlist.c linkedlist/doublylinkedlist.h
         linkedlist/circularlinkedlist.c linkedlist/circularlinkedlist.h
-        linkedlist/frame.c linkedlist/frame.h
-        linkedlist/replacepage.c linkedlist/replacepage.h)
+        test/frame.c test/frame.h
+        test/replacepage.c test/replacepage.h
+        test/linkedlist_test.c test/linkedlist_test.h
+        stack/stack.c stack/stack.h
+        queue/queue.c queue/queue.h
+        test/stack_test.c test/stack_test.h
+        test/queue_test.c test/queue_test.h
+)
 add_executable(MasteringAlgorithms ${SOURCE_FILES})

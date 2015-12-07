@@ -6,7 +6,7 @@
 #include <string.h>
 #include <stdlib.h>
 
-void linkedlist_init(linkedlist *list, void (*destory)(void *data)) {
+void linkedlist_init(linkedlist_type *list, void (*destory)(void *data)) {
     list->size = 0;
     list->destroy = destory;
     list->head = NULL;
@@ -15,7 +15,7 @@ void linkedlist_init(linkedlist *list, void (*destory)(void *data)) {
     return;
 }
 
-void linkedlist_destroy(linkedlist *list) {
+void linkedlist_destroy(linkedlist_type *list) {
     void *data;
 
     // Remove each element
@@ -27,16 +27,16 @@ void linkedlist_destroy(linkedlist *list) {
     }
 
     // No operations are allowed now, but clear the structure as a precaution
-    memset(list, 0, sizeof(linkedlist));
+    memset(list, 0, sizeof(linkedlist_type));
 
     return;
 }
 
-int linkedlist_insert_next(linkedlist *list, linkedlist_node *node, const void *data) {
-    linkedlist_node *new_node;
+int linkedlist_insert_next(linkedlist_type *list, linkedlist_node_type *node, const void *data) {
+    linkedlist_node_type *new_node;
 
     // Allocate storage for the element
-    if (NULL == (new_node = (linkedlist_node *)malloc(sizeof(linkedlist_node)))) {
+    if (NULL == (new_node = (linkedlist_node_type *)malloc(sizeof(linkedlist_node_type)))) {
         return -1;
     }
 
@@ -66,8 +66,8 @@ int linkedlist_insert_next(linkedlist *list, linkedlist_node *node, const void *
     return 0;
 }
 
-int linkedlist_remove_next(linkedlist *list, linkedlist_node *node, void **data) {
-    linkedlist_node *old_node;
+int linkedlist_remove_next(linkedlist_type *list, linkedlist_node_type *node, void **data) {
+    linkedlist_node_type *old_node;
 
     // Do not allow removeal from empty lsit
     if (0 == linkedlist_size(list)) {

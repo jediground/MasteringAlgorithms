@@ -6,27 +6,27 @@
 #define MASTERINGALGORITHMS_DOUBLYLINKEDLIST_H
 
 /// Define a structure for doubly-linked list elements
-typedef struct _doublylinkedlist_node {
+typedef struct _doublylinkedlist_node_type {
     void *data;
-    struct _doublylinkedlist_node *previous;
-    struct _doublylinkedlist_node *next;
-} doublylinkedlist_node;
+    struct _doublylinkedlist_node_type *previous;
+    struct _doublylinkedlist_node_type *next;
+} doublylinkedlist_node_type;
 
 /// Define a structure for doubly-linked lists
-typedef struct _doublylinkedlist {
+typedef struct _doublylinkedlist_type {
     int size;
     int (*match)(const void *key1, const void *key2);
     void (*destroy)(void *data);
-    doublylinkedlist_node *head;
-    doublylinkedlist_node *tail;
-} doublylinkedlist;
+    doublylinkedlist_node_type *head;
+    doublylinkedlist_node_type *tail;
+} doublylinkedlist_type;
 
 // Public interface
-void doublylinkedlist_init(doublylinkedlist *list, void(destroy)(void *data));
-void doublylinkedlist_destroy(doublylinkedlist *list);
-int doublylinkedlist_insert_next(doublylinkedlist *list, doublylinkedlist_node *node, const void *data);
-int doublylinkedlist_insert_previous(doublylinkedlist *list, doublylinkedlist_node *node, const void *data);
-int doublylinkedlist_remove(doublylinkedlist *list, doublylinkedlist_node *node, void **data);
+void doublylinkedlist_init(doublylinkedlist_type *list, void(destroy)(void *data));
+void doublylinkedlist_destroy(doublylinkedlist_type *list);
+int doublylinkedlist_insert_next(doublylinkedlist_type *list, doublylinkedlist_node_type *node, const void *data);
+int doublylinkedlist_insert_previous(doublylinkedlist_type *list, doublylinkedlist_node_type *node, const void *data);
+int doublylinkedlist_remove(doublylinkedlist_type *list, doublylinkedlist_node_type *node, void **data);
 
 #define doublylinkedlist_size(list) ((list)->size)
 #define doublylinkedlist_head(list) ((list)->head)

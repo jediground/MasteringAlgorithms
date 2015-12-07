@@ -11,9 +11,9 @@
 
 #include <stdio.h>
 
-#include "linkedlist.h"
+#include "../linkedlist/linkedlist.h"
 
-int alloc_frame(linkedlist *frames);
-int free_frame(linkedlist *frames, int frame_number);
+int alloc_frame(linkedlist_type *frames);
+int free_frame(linkedlist_type *frames, int frame_number);
 
 #endif /* frame_h */

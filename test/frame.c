@@ -9,7 +9,7 @@
 #include "frame.h"
 #include <stdlib.h>
 
-int alloc_frame(linkedlist *frames) {
+int alloc_frame(linkedlist_type *frames) {
     int frame_number, *data;
     
     if (0 == linkedlist_size(frames)) {
@@ -28,7 +28,7 @@ int alloc_frame(linkedlist *frames) {
     return 0;
 }
 
-int free_frame(linkedlist *frames, int frame_number) {
+int free_frame(linkedlist_type *frames, int frame_number) {
     int *data;
     
     // Allocate storage for the frame number

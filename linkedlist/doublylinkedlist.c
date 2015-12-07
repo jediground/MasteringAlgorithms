@@ -6,7 +6,7 @@
 #include <string.h>
 #include <stdlib.h>
 
-void doublylinkedlist_init(doublylinkedlist *list, void(destroy)(void *data)) {
+void doublylinkedlist_init(doublylinkedlist_type *list, void(destroy)(void *data)) {
     list->size = 0;
     list->destroy = destroy;
     list->head = NULL;
@@ -15,7 +15,7 @@ void doublylinkedlist_init(doublylinkedlist *list, void(destroy)(void *data)) {
     return;
 }
 
-void doublylinkedlist_destroy(doublylinkedlist *list) {
+void doublylinkedlist_destroy(doublylinkedlist_type *list) {
     void *data;
 
     // Remove each element
@@ -26,13 +26,13 @@ void doublylinkedlist_destroy(doublylinkedlist *list) {
     }
 
     // No operations are allowed now, but clear the structure as a precaution
-    memset(list, 0, sizeof(doublylinkedlist));
+    memset(list, 0, sizeof(doublylinkedlist_type));
 
     return;
 }
 
-int doublylinkedlist_insert_next(doublylinkedlist *list, doublylinkedlist_node *node, const void *data) {
-    doublylinkedlist_node *new_node;
+int doublylinkedlist_insert_next(doublylinkedlist_type *list, doublylinkedlist_node_type *node, const void *data) {
+    doublylinkedlist_node_type *new_node;
 
     // Do not allow a NULL element unless th list is empty
     if (NULL == node && 0 != doublylinkedlist_size(list)) {
@@ -40,7 +40,7 @@ int doublylinkedlist_insert_next(doublylinkedlist *list, doublylinkedlist_node *
     }
 
     // Allocated storage for the element
-    if (NULL == (new_node = (doublylinkedlist_node *)malloc(sizeof(doublylinkedlist_node)))) {
+    if (NULL == (new_node = (doublylinkedlist_node_type *)malloc(sizeof(doublylinkedlist_node_type)))) {
         return -1;
     }
 
@@ -72,8 +72,8 @@ int doublylinkedlist_insert_next(doublylinkedlist *list, doublylinkedlist_node *
     return 0;
 }
 
-int doublylinkedlist_insert_previous(doublylinkedlist *list, doublylinkedlist_node *node, const void *data) {
-    doublylinkedlist_node *new_node;
+int doublylinkedlist_insert_previous(doublylinkedlist_type *list, doublylinkedlist_node_type *node, const void *data) {
+    doublylinkedlist_node_type *new_node;
 
     // Do not allow a NULL element unless th list is empty
     if (NULL == node && 0 != doublylinkedlist_size(list)) {
@@ -81,7 +81,7 @@ int doublylinkedlist_insert_previous(doublylinkedlist *list, doublylinkedlist_no
     }
 
     // Allocated storage for the element
-    if (NULL == (new_node = (doublylinkedlist_node *)malloc(sizeof(doublylinkedlist_node)))) {
+    if (NULL == (new_node = (doublylinkedlist_node_type *)malloc(sizeof(doublylinkedlist_node_type)))) {
         return -1;
     }
 
@@ -113,7 +113,7 @@ int doublylinkedlist_insert_previous(doublylinkedlist *list, doublylinkedlist_no
     return 0;
 }
 
-int doublylinkedlist_remove(doublylinkedlist *list, doublylinkedlist_node *node, void **data) {
+int doublylinkedlist_remove(doublylinkedlist_type *list, doublylinkedlist_node_type *node, void **data) {
     // Do not allow a NULL element or removal form an empty list
     if (NULL == node || 0 == doublylinkedlist_size(list)) {
         return -1;
